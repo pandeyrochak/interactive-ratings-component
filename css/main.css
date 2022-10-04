@@ -597,10 +597,6 @@ body{
   margin-bottom: 2rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -611,10 +607,6 @@ body{
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.block {
-  display: block;
 }
 
 .flex {
@@ -749,11 +741,6 @@ body{
   padding-right: 1rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -765,11 +752,6 @@ body{
 
 .text-lg {
   font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
