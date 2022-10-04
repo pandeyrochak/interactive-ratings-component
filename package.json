@@ -2,10 +2,10 @@
   "name": "interactive-rating-component-main",
   "version": "1.0.0",
   "description": "![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)",
-  "main": "./public/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./css/style.css -o ./public/main.css",
-    "watch": "npx tailwindcss -i ./css/style.css -o ./public/main.css --watch"
+    "build": "npx tailwindcss -i ./css/style.css -o ./css/main.css",
+    "watch": "npx tailwindcss -i ./css/style.css -o ./css/main.css --watch"
   },
   "keywords": [],
   "author": "",
