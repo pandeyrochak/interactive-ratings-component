@@ -1,10 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* add base layer */
+@layer base {
+ body{
+  font-family: "Overpass", sans;
+  font-size: 15px;
+  font-weight: 400;
+ }
+ .selected-rating{
+  @apply bg-primary-orange text-white !important;
+ }
+}
 .attribution {
   font-size: 11px;
   text-align: center;
+  @apply text-neutral-medium-grey
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  @apply text-primary-orange
 }

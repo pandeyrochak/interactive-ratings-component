@@ -11,32 +11,115 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Overpass font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Overpass:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
     <title>Frontend Mentor | Interactive rating component</title>
   </head>
-  <body>
-    <!-- Rating state start -->
+  <body class="w-full h-screen flex justify-center items-center bg-black">
+    <!-- ratings interactions -->
+    <div
+      id="ratingsContainer"
+      class="max-w-sm px-8 py-7 rounded-3xl bg-gradient-to-t from-neutral-very-dark-blue to-neutral-dark-blue flex flex-col items-start mx-4"
+    >
+      <div
+        class="rounded-full bg-neutral-dark-blue w-9 h-9 flex justify-center items-center mb-6"
+      >
+        <img src="./images/icon-star.svg" alt="" />
+      </div>
+      <h2 class="font-bold text-lg text-white mb-2">How did we do?</h2>
+      <p class="text-neutral-light-grey mb-7">
+        Please let us know howo we did with your support request. All feedback
+        is appreciated to help us improve our offering!
+      </p>
+      <div
+        id="ratings"
+        class="flex justify-between items-center gap-2 w-full mb-8"
+      >
+        <div
+          class="rounded-full w-10 h-10 flex items-center justify-center text-neutral-light-grey bg-neutral-dark-blue hover:bg-neutral-medium-grey hover:text-white cursor-pointer"
+        >
+          1
+        </div>
+        <div
+          class="rounded-full w-10 h-10 flex items-center justify-center text-neutral-light-grey bg-neutral-dark-blue hover:bg-neutral-medium-grey hover:text-white cursor-pointer"
+        >
+          2
+        </div>
+        <div
+          class="rounded-full w-10 h-10 flex items-center justify-center text-neutral-light-grey bg-neutral-dark-blue hover:bg-neutral-medium-grey hover:text-white cursor-pointer"
+        >
+          3
+        </div>
+        <div
+          class="rounded-full w-10 h-10 flex items-center justify-center text-neutral-light-grey bg-neutral-dark-blue hover:bg-neutral-medium-grey hover:text-white cursor-pointer"
+        >
+          4
+        </div>
+        <div
+          class="rounded-full w-10 h-10 flex items-center justify-center text-neutral-light-grey bg-neutral-dark-blue hover:bg-neutral-medium-grey hover:text-white cursor-pointer"
+        >
+          5
+        </div>
+      </div>
+      <button
+        class="w-full rounded-3xl bg-primary-orange text-white text-center uppercase py-2 hover:bg-white hover:text-primary-orange"
+      >
+        submit
+      </button>
+    </div>
+    <!-- end of ratings interaction -->
+    <!-- thankyou content -->
+    <div
+      id="thankYouContainer"
+      class="max-w-sm px-8 py-7 rounded-3xl bg-gradient-to-t from-neutral-very-dark-blue to-neutral-dark-blue flex hidden flex-col items-center mx-4"
+    >
+      <img src="./images/illustration-thank-you.svg" alt="" />
+      <div
+        class="rounded-full w-fit px-4 py-1 mt-4 text-primary-orange bg-neutral-dark-blue text-center"
+      >
+        You selected <span class="selected-rating-value">4</span> out of 5
+      </div>
+      <h1 class="text-white font-bold text-2xl mt-7">Thank you!</h1>
+      <p class="text-neutral-medium-grey text-center mt-3">
+        We appreciate you taking time to give a rating. If you ever need more
+        support, don't hesitate to get in touch!
+      </p>
+    </div>
 
-    How did we do? Please let us know how we did with your support request. All
-    feedback is appreciated to help us improve our offering! 1 2 3 4 5 Submit
-
-    <!-- Rating state end -->
-
-    <!-- Thank you state start -->
-
-    You selected
-    <!-- Add rating here -->
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch!
-
-    <!-- Thank you state end -->
-
-    <div class="attribution">
+    <div class="attribution w-full absolute bottom-4 left-1/2 -translate-x-1/2">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://twitter.com/pandeyrochak_">Rochak Pandey</a>.
     </div>
+    <script type="text/javascript">
+      const ratings = document.querySelectorAll("#ratings div");
+      const submitBtn= document.querySelector("#ratingsContainer button");
+      ratings.forEach((rating) => {
+        rating.addEventListener("click", () => {
+          ratings.forEach((rating) => {
+            rating.classList.remove("selected-rating");
+          });
+          rating.classList.add("selected-rating");
+        });
+      });
+
+      submitBtn.addEventListener("click", () => {
+        const selectedRating = document.querySelector(".selected-rating");
+        if(selectedRating){
+          const selectedRatingValue = selectedRating.innerText;
+          document.querySelector(".selected-rating-value").innerText = selectedRatingValue;
+          document.querySelector("#ratingsContainer").classList.add("hidden");
+          document.querySelector("#thankYouContainer").classList.remove("hidden");
+        }
+      });
+      const ratingsContainer = document.getElementById("ratingsContainer");
+      const thankYouContainer = document.getElementById("thankYouContainer");
+
+    </script>
   </body>
 </html>
