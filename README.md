@@ -2,11 +2,11 @@
 
 This is a solution to the [Interactive Ratings component](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI) on Frontend Mentor.
 
-### Screenshot
+### Screenshots
 
-![](.\screenshots\main.jpg)
-![](.\screenshots\thank-you.jpg)
-![](.\screenshots\active.jpg)
+![](./screenshots/main.jpg)
+![](./screenshots/thank-you.jpg)
+![](./screenshots/active.jpg)
 
 ### Links
 
